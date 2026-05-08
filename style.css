@@ -1,0 +1,281 @@
+/* Aho marketing site — single stylesheet, mobile-first, RTL-aware. */
+:root {
+  --fg: #1f2937;
+  --muted: #6b7280;
+  --accent: #d97706;
+  --accent-dark: #b45309;
+  --bg: #fafaf9;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --max: 960px;
+  --max-prose: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Arabic typography tuning. */
+body[dir="rtl"] {
+  font-family: "Segoe UI", Tahoma, Arial, "Helvetica Neue", sans-serif;
+}
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+
+/* Top bar — present on every page. */
+.topbar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+}
+.topbar-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+.brand .icon { font-size: 24px; }
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+  align-items: center;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.nav-links a:hover, .nav-links a.current {
+  color: var(--accent);
+}
+.lang-switch {
+  border-inline-start: 1px solid var(--border);
+  padding-inline-start: 18px;
+  font-weight: 500;
+}
+
+/* Hero — marketing-only. */
+.hero {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fed7aa 100%);
+  padding: 64px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.hero .badge {
+  display: inline-block;
+  background: rgba(217, 119, 6, 0.15);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: 44px;
+  margin: 0 0 16px;
+  line-height: 1.15;
+}
+.hero p.tagline {
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0 auto 28px;
+  max-width: 540px;
+}
+.cta-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 0.1s ease;
+}
+.cta:hover { transform: translateY(-1px); }
+.cta-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.cta-secondary {
+  background: #fff;
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+/* Sections. */
+section {
+  padding: 56px 20px;
+}
+.section-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+section.alt { background: var(--card); }
+section h2 {
+  font-size: 28px;
+  margin: 0 0 12px;
+  text-align: center;
+}
+section .lede {
+  text-align: center;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+
+/* How it works steps. */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.step-num {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.step h3 { margin: 0 0 6px; font-size: 17px; }
+.step p { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* Hunt-type cards. */
+.hunts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.hunt {
+  background: linear-gradient(135deg, #fff7ed, #ffffff);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+}
+.hunt .icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 12px;
+}
+.hunt h3 { margin: 0 0 6px; font-size: 18px; }
+.hunt p { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* Beta callout. */
+.beta-callout {
+  background: var(--card);
+  border: 2px dashed var(--accent);
+  border-radius: 14px;
+  padding: 28px;
+  max-width: var(--max-prose);
+  margin: 0 auto;
+  text-align: center;
+}
+.beta-callout h2 { margin-top: 0; }
+.beta-callout p { color: var(--muted); }
+
+/* Prose-style content (legal pages). */
+main.prose {
+  max-width: var(--max-prose);
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+main.prose h1 { font-size: 28px; margin: 0 0 8px; }
+main.prose h2 { font-size: 18px; margin: 32px 0 8px; }
+main.prose h3 { font-size: 15px; margin: 20px 0 6px; }
+main.prose p, main.prose ul, main.prose ol { margin: 0 0 12px; }
+main.prose ul, main.prose ol { padding-inline-start: 22px; }
+main.prose li { margin-bottom: 4px; }
+main.prose .meta {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+code {
+  background: #f3f4f6;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.92em;
+}
+
+/* Footer. */
+footer.site-footer {
+  background: #1f2937;
+  color: #9ca3af;
+  padding: 32px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+footer.site-footer a { color: #fbbf24; text-decoration: none; }
+footer.site-footer a:hover { text-decoration: underline; }
+footer.site-footer .footer-links {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 540px) {
+  .hero { padding: 48px 20px; }
+  .hero h1 { font-size: 34px; }
+  .hero p.tagline { font-size: 16px; }
+  .nav-links { gap: 12px; font-size: 13px; }
+  .lang-switch { padding-inline-start: 12px; }
+  section { padding: 44px 20px; }
+}
+
+@media print {
+  .topbar, footer.site-footer, .hero { display: none; }
+  body { background: #fff; }
+}
