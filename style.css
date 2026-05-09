@@ -57,6 +57,40 @@ a:hover { color: var(--accent-dark); }
 }
 .brand .icon { font-size: 24px; }
 
+/* Glowing brand wordmark — every "Aho" / "آهو" gets the treatment. */
+.brand-name {
+  font-weight: 700;
+  background-image: linear-gradient(120deg,
+    #b45309 0%, #d97706 30%, #fbbf24 55%, #f59e0b 80%, #d97706 100%);
+  background-size: 220% auto;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 0 6px rgba(217, 119, 6, 0.4));
+  animation: aho-shimmer 4.5s ease-in-out infinite;
+  display: inline-block;
+  padding: 0 0.06em;
+}
+.brand .brand-name { font-size: inherit; }
+.site-footer .brand-name {
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.55));
+}
+@keyframes aho-shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 4px rgba(217, 119, 6, 0.35));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 14px rgba(251, 191, 36, 0.7));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-name { animation: none; }
+}
+
 .nav-links {
   display: flex;
   gap: 18px;
