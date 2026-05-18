@@ -1,14 +1,14 @@
-/* Aho marketing site — single stylesheet, mobile-first, RTL-aware. */
+/* Aho marketing site - single stylesheet, mobile-first, RTL-aware. */
 :root {
   --fg: #1e1b3a;
   --muted: #6b6585;
-  --accent: #7c3aed;          /* violet-600 — primary purple */
+  --accent: #7c3aed;          /* violet-600 - primary purple */
   --accent-dark: #5b21b6;     /* violet-800 */
   --accent-light: #a855f7;    /* violet-500 */
-  --accent-2: #10b981;        /* emerald-500 — primary green */
+  --accent-2: #10b981;        /* emerald-500 - primary green */
   --accent-2-dark: #047857;
   --accent-2-light: #34d399;
-  --accent-3: #d946ef;        /* fuchsia — neon pop */
+  --accent-3: #d946ef;        /* fuchsia - neon pop */
   --bg: #faf8ff;
   --card: #ffffff;
   --border: #e8e2f4;
@@ -38,7 +38,7 @@ body[dir="rtl"] {
 a { color: var(--accent); }
 a:hover { color: var(--accent-dark); }
 
-/* Top bar — present on every page. */
+/* Top bar - present on every page. */
 .topbar {
   background: var(--card);
   border-bottom: 1px solid var(--border);
@@ -65,7 +65,7 @@ a:hover { color: var(--accent-dark); }
 }
 .brand .icon { font-size: 24px; }
 
-/* Glowing brand wordmark — every "Aho" / "آهو" gets the treatment. */
+/* Glowing brand wordmark - every "Aho" / "آهو" gets the treatment. */
 .brand-name {
   font-weight: 700;
   background-image: linear-gradient(120deg,
@@ -125,7 +125,7 @@ a:hover { color: var(--accent-dark); }
   font-weight: 500;
 }
 
-/* Hero — dark, dramatic, glowing. */
+/* Hero - dark, dramatic, glowing. */
 .hero {
   background:
     radial-gradient(ellipse 60% 50% at 18% 28%, rgba(124, 58, 237, 0.55) 0%, transparent 60%),
@@ -345,7 +345,7 @@ section .lede {
 .step h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
 .step p { margin: 0; color: var(--muted); font-size: 14.5px; }
 
-/* Hunt-type cards — each gets its own neon flavor. */
+/* Hunt-type cards - each gets its own neon flavor. */
 .hunts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -427,7 +427,7 @@ section .lede {
   --hunt-shadow: rgba(217, 70, 239, 0.45);
 }
 
-/* Beta callout — gradient border + soft glow. */
+/* Beta callout - gradient border + soft glow. */
 .beta-callout {
   position: relative;
   border-radius: 22px;
